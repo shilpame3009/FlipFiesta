@@ -1,0 +1,924 @@
+.app-shell {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  min-height: 100vh;
+  background: #fffaf6;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 24px 16px;
+  color: #fff8ff;
+  background: #39234e;
+}
+
+.main-content {
+  min-width: 0;
+  padding: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.brand-icon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 13px;
+  color: #40224d;
+  background: linear-gradient(135deg, #ffb2a2, #f7df75, #80e9d1);
+  font-size: 21px;
+}
+
+.side-title {
+  margin: 32px 0 10px 10px;
+  color: #c9aed7;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.sidebar nav {
+  display: grid;
+  gap: 6px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 0 12px;
+  border-radius: 12px;
+  color: #eadcf0;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.nav-item.active {
+  color: #382349;
+  background: #fff4fb;
+}
+
+.side-note {
+  margin-top: auto;
+  padding: 14px;
+  border: 1px solid #ffffff26;
+  border-radius: 15px;
+  background: #ffffff12;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.side-note strong {
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+  font-size: 10px;
+}
+
+.side-note p {
+  margin: 0;
+  color: #eadcf0;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  color: #8a7c91;
+  font-size: 10px;
+}
+
+.welcome {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  margin: 28px 0 20px;
+}
+
+.welcome h1 {
+  margin: 0;
+  color: #342243;
+  font-size: 36px;
+}
+
+.welcome p {
+  margin: 8px 0 0;
+  color: #8c7e91;
+  font-size: 12px;
+}
+
+.challenge-pill {
+  padding: 9px 11px;
+  border-radius: 999px;
+  color: #9e4778;
+  background: #fff0f7;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.game-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  align-items: start;
+  gap: 18px;
+}
+
+.game-panel,
+.challenge-card {
+  border: 1px solid #f0e4ec;
+  border-radius: 22px;
+  box-shadow: 0 12px 30px #51385a0d;
+}
+
+.game-panel {
+  padding: 22px;
+  background: #ffffff;
+}
+
+.game-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.game-label,
+.challenge-label {
+  margin: 0 0 8px;
+  color: #bd7197;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+}
+
+.game-heading h2 {
+  margin: 0;
+  color: #342243;
+  font-size: 21px;
+}
+
+.deck-picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  color: #745b82;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.deck-picker select {
+  padding: 8px 10px;
+  border: 1px solid #eadcf0;
+  border-radius: 999px;
+  color: #68477a;
+  background: #f5edf7;
+  font: inherit;
+  cursor: pointer;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 12px;
+  border-radius: 13px;
+  color: #8b7c90;
+  background: #fff8f4;
+  font-size: 11px;
+}
+
+.stat-item strong {
+  color: #432b53;
+  font-size: 14px;
+}
+
+.memory-board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.memory-board.large-board {
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.win-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 15px;
+  border: 1px solid #f4d2e3;
+  border-radius: 16px;
+  background: linear-gradient(120deg, #fff0f7, #fff5d7 55%, #e9f9f3);
+  animation: win-pop 420ms ease-out;
+}
+
+.win-icon {
+  font-size: 27px;
+}
+
+.win-banner strong {
+  color: #57376c;
+  font-size: 14px;
+}
+
+.win-banner p {
+  margin: 4px 0 0;
+  color: #806d86;
+  font-size: 11px;
+}
+
+@keyframes win-pop {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .win-banner {
+    animation: none;
+  }
+}
+
+.memory-card {
+  display: grid;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid #ffffffa8;
+  border-radius: 17px;
+  color: #57376c;
+  background: linear-gradient(145deg, #ffe2ef, #f2ddff);
+  box-shadow: 0 5px 12px #4d2a5a14;
+  cursor: pointer;
+  font: inherit;
+  font-size: clamp(23px, 4vw, 36px);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.memory-card:nth-child(4n + 2) {
+  background: linear-gradient(145deg, #fff0bd, #ffdfd0);
+}
+
+.memory-card:nth-child(4n + 3) {
+  background: linear-gradient(145deg, #d8f7eb, #d8edff);
+}
+
+.memory-card:nth-child(4n) {
+  background: linear-gradient(145deg, #e4ddff, #ffdff1);
+}
+
+.memory-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 16px #4d2a5a20;
+}
+
+.memory-card:focus-visible,
+.restart-button:focus-visible,
+.peek-button:focus-visible,
+.pause-button:focus-visible,
+.reset-progress-button:focus-visible {
+  outline: 3px solid #7d52a0;
+  outline-offset: 3px;
+}
+
+.game-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.game-footer p {
+  margin: 0;
+  color: #8c7e91;
+  font-size: 11px;
+}
+
+.game-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.peek-button {
+  padding: 9px 13px;
+  border: 1px solid #eadcf0;
+  border-radius: 999px;
+  color: #68477a;
+  background: #faf4ff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.peek-button:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.pause-button {
+  padding: 9px 13px;
+  border: 1px solid #eadcf0;
+  border-radius: 999px;
+  color: #68477a;
+  background: #f5edf7;
+  cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.pause-button:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.restart-button {
+  padding: 9px 13px;
+  border: 0;
+  border-radius: 999px;
+  color: #ffffff;
+  background: #754b8d;
+  cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.pause-note {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: #68477a;
+  background: #f5edf7;
+  font-size: 11px;
+  text-align: center;
+}
+
+.challenge-card {
+  padding: 18px;
+  background: linear-gradient(150deg, #fff0f7, #fff7df);
+}
+
+.challenge-label {
+  color: #b56d96;
+}
+
+.challenge-card h3 {
+  margin: 12px 0 8px;
+  color: #432b53;
+  font-size: 17px;
+}
+
+.challenge-card > p:last-of-type {
+  margin: 0;
+  color: #87778c;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.progress-track {
+  height: 8px;
+  margin-top: 18px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #ffffffb8;
+}
+
+.progress-track span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ff9fb8, #9e72cc);
+}
+
+@media (max-width: 850px) {
+  .game-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .challenge-card {
+    max-width: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    min-height: auto;
+    padding: 14px 16px;
+  }
+
+  .side-title {
+    margin-top: 18px;
+  }
+
+  .side-note {
+    margin-top: 16px;
+  }
+
+  .main-content {
+    padding: 18px 14px;
+  }
+
+  .welcome {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .welcome h1 {
+    font-size: 30px;
+  }
+
+  .game-panel {
+    padding: 16px;
+  }
+
+  .game-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .stats-row {
+    gap: 6px;
+  }
+
+  .game-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .game-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .stat-item {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 9px;
+    font-size: 10px;
+  }
+
+  .memory-board {
+    gap: 8px;
+  }
+
+  .memory-board.large-board {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 400px) {
+  .memory-board.large-board {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.nav-item {
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.nav-item:hover,
+.nav-item:focus-visible {
+  color: #382349;
+  background: #fff4fb;
+  outline: none;
+}
+
+.game-panel,
+.collection-section {
+  scroll-margin-top: 18px;
+}
+
+.collection-section {
+  margin-top: 18px;
+  padding: 22px;
+  border: 1px solid #f0e4ec;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 12px 30px #51385a0d;
+}
+
+.collection-section h2 {
+  margin: 0;
+  color: #342243;
+  font-size: 21px;
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.collection-card {
+  display: flex;
+  min-height: 100px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #fff0f7, #f3e8ff);
+}
+
+.collection-card span {
+  font-size: 30px;
+}
+
+.collection-card p {
+  margin: 0;
+  color: #735f7b;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.badge-tile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 17px;
+  background: linear-gradient(135deg, #fff1c9, #ffe5f3);
+}
+
+.badge-icon {
+  font-size: 34px;
+}
+
+.badge-tile h3 {
+  margin: 0 0 6px;
+  color: #432b53;
+  font-size: 16px;
+}
+
+.badge-tile p {
+  margin: 0;
+  color: #87778c;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.reset-progress-button {
+  margin-top: 14px;
+  padding: 9px 13px;
+  border: 1px solid #eadcf0;
+  border-radius: 999px;
+  color: #68477a;
+  background: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Garden Party uses a calm green palette. */
+.app-shell.theme-garden {
+  background: #f6fbf4;
+}
+
+.app-shell.theme-garden .sidebar {
+  background: linear-gradient(160deg, #254638, #35684e);
+}
+
+.app-shell.theme-garden .brand-icon {
+  color: #28533c;
+  background: linear-gradient(135deg, #c5efb9, #f4e7a0, #a8e8cf);
+}
+
+.app-shell.theme-garden .side-title {
+  color: #bddbc0;
+}
+
+.app-shell.theme-garden .nav-item.active,
+.app-shell.theme-garden .nav-item:hover,
+.app-shell.theme-garden .nav-item:focus-visible {
+  color: #294e39;
+  background: #eff8e9;
+}
+
+.app-shell.theme-garden .welcome h1,
+.app-shell.theme-garden .game-heading h2,
+.app-shell.theme-garden .collection-section h2,
+.app-shell.theme-garden .challenge-card h3 {
+  color: #294638;
+}
+
+.app-shell.theme-garden .game-label,
+.app-shell.theme-garden .challenge-label {
+  color: #558765;
+}
+
+.app-shell.theme-garden .challenge-pill,
+.app-shell.theme-garden .deck-picker select,
+.app-shell.theme-garden .peek-button,
+.app-shell.theme-garden .pause-button,
+.app-shell.theme-garden .reset-progress-button {
+  border-color: #d4e8d3;
+  color: #466b4e;
+  background: #e9f5e4;
+}
+
+.app-shell.theme-garden .stat-item {
+  color: #5f7c61;
+  background: #f1f8e9;
+}
+
+.app-shell.theme-garden .stat-item strong {
+  color: #315d43;
+}
+
+.app-shell.theme-garden .memory-card,
+.app-shell.theme-garden .memory-card:nth-child(4n + 2),
+.app-shell.theme-garden .memory-card:nth-child(4n + 3),
+.app-shell.theme-garden .memory-card:nth-child(4n) {
+  color: #315d43;
+  background: linear-gradient(145deg, #d6f0d7, #edf5c9);
+}
+
+.app-shell.theme-garden .memory-card:nth-child(4n + 2) {
+  background: linear-gradient(145deg, #e7f2c9, #d1eddf);
+}
+
+.app-shell.theme-garden .memory-card:nth-child(4n + 3) {
+  background: linear-gradient(145deg, #d6f2e9, #e7f4d7);
+}
+
+.app-shell.theme-garden .challenge-card {
+  background: linear-gradient(150deg, #e5f5e5, #f7f5d9);
+}
+
+.app-shell.theme-garden .game-panel,
+.app-shell.theme-garden .challenge-card,
+.app-shell.theme-garden .collection-section {
+  border-color: #dcebd9;
+}
+
+.app-shell.theme-garden .progress-track span,
+.app-shell.theme-garden .restart-button {
+  background: linear-gradient(90deg, #6ab47a, #98be61);
+}
+
+.app-shell.theme-garden .collection-card {
+  background: linear-gradient(145deg, #e9f7e9, #eff4d8);
+}
+
+.app-shell.theme-garden .badge-tile,
+.app-shell.theme-garden .win-banner {
+  border-color: #d6e9ce;
+  background: linear-gradient(135deg, #e7f6d9, #f9f2d5);
+}
+
+/* Ocean Friends uses a bright aqua and blue palette. */
+.app-shell.theme-ocean {
+  background: #f3fbff;
+}
+
+.app-shell.theme-ocean .sidebar {
+  background: linear-gradient(160deg, #173b5a, #17697a);
+}
+
+.app-shell.theme-ocean .brand-icon {
+  color: #164a66;
+  background: linear-gradient(135deg, #9ee8ef, #b7e4ff, #b5f0dc);
+}
+
+.app-shell.theme-ocean .side-title {
+  color: #b7dce6;
+}
+
+.app-shell.theme-ocean .nav-item.active,
+.app-shell.theme-ocean .nav-item:hover,
+.app-shell.theme-ocean .nav-item:focus-visible {
+  color: #164861;
+  background: #e7f8fb;
+}
+
+.app-shell.theme-ocean .welcome h1,
+.app-shell.theme-ocean .game-heading h2,
+.app-shell.theme-ocean .collection-section h2,
+.app-shell.theme-ocean .challenge-card h3 {
+  color: #174663;
+}
+
+.app-shell.theme-ocean .game-label,
+.app-shell.theme-ocean .challenge-label {
+  color: #398ba2;
+}
+
+.app-shell.theme-ocean .challenge-pill,
+.app-shell.theme-ocean .deck-picker select,
+.app-shell.theme-ocean .peek-button,
+.app-shell.theme-ocean .pause-button,
+.app-shell.theme-ocean .reset-progress-button {
+  border-color: #cbe8ee;
+  color: #316e83;
+  background: #e5f6fa;
+}
+
+.app-shell.theme-ocean .stat-item {
+  color: #527889;
+  background: #e9f7fa;
+}
+
+.app-shell.theme-ocean .stat-item strong {
+  color: #205c76;
+}
+
+.app-shell.theme-ocean .memory-card,
+.app-shell.theme-ocean .memory-card:nth-child(4n + 2),
+.app-shell.theme-ocean .memory-card:nth-child(4n + 3),
+.app-shell.theme-ocean .memory-card:nth-child(4n) {
+  color: #205c76;
+  background: linear-gradient(145deg, #c8f0f4, #d8eaff);
+}
+
+.app-shell.theme-ocean .memory-card:nth-child(4n + 2) {
+  background: linear-gradient(145deg, #cbeaff, #d6f4e9);
+}
+
+.app-shell.theme-ocean .memory-card:nth-child(4n + 3) {
+  background: linear-gradient(145deg, #d2f4ef, #d9e9ff);
+}
+
+.app-shell.theme-ocean .challenge-card {
+  background: linear-gradient(150deg, #e2f7fb, #e7f0ff);
+}
+
+.app-shell.theme-ocean .game-panel,
+.app-shell.theme-ocean .challenge-card,
+.app-shell.theme-ocean .collection-section {
+  border-color: #d4e9ef;
+}
+
+.app-shell.theme-ocean .progress-track span,
+.app-shell.theme-ocean .restart-button {
+  background: linear-gradient(90deg, #49b6c1, #5f91d2);
+}
+
+.app-shell.theme-ocean .collection-card {
+  background: linear-gradient(145deg, #e1f6fa, #e6efff);
+}
+
+.app-shell.theme-ocean .badge-tile,
+.app-shell.theme-ocean .win-banner {
+  border-color: #cce7ed;
+  background: linear-gradient(135deg, #dff7f3, #e5eeff);
+}
+
+/* Pink Paradise uses a brighter rose palette. */
+.app-shell.theme-pink {
+  background: #fff5f8;
+}
+
+.app-shell.theme-pink .sidebar {
+  background: linear-gradient(160deg, #71264c, #a33c6d);
+}
+
+.app-shell.theme-pink .brand-icon {
+  color: #8b315c;
+  background: linear-gradient(135deg, #ffc7dc, #ffe6a8, #ffd0eb);
+}
+
+.app-shell.theme-pink .side-title {
+  color: #f0bfd5;
+}
+
+.app-shell.theme-pink .nav-item.active,
+.app-shell.theme-pink .nav-item:hover,
+.app-shell.theme-pink .nav-item:focus-visible {
+  color: #803251;
+  background: #fff0f6;
+}
+
+.app-shell.theme-pink .welcome h1,
+.app-shell.theme-pink .game-heading h2,
+.app-shell.theme-pink .collection-section h2,
+.app-shell.theme-pink .challenge-card h3 {
+  color: #71304d;
+}
+
+.app-shell.theme-pink .game-label,
+.app-shell.theme-pink .challenge-label {
+  color: #bd527f;
+}
+
+.app-shell.theme-pink .challenge-pill,
+.app-shell.theme-pink .deck-picker select,
+.app-shell.theme-pink .peek-button,
+.app-shell.theme-pink .pause-button,
+.app-shell.theme-pink .reset-progress-button {
+  border-color: #f2cddd;
+  color: #963e66;
+  background: #ffedf4;
+}
+
+.app-shell.theme-pink .stat-item {
+  color: #94657a;
+  background: #fff0f5;
+}
+
+.app-shell.theme-pink .stat-item strong {
+  color: #843653;
+}
+
+.app-shell.theme-pink .memory-card,
+.app-shell.theme-pink .memory-card:nth-child(4n + 2),
+.app-shell.theme-pink .memory-card:nth-child(4n + 3),
+.app-shell.theme-pink .memory-card:nth-child(4n) {
+  color: #873553;
+  background: linear-gradient(145deg, #ffd5e5, #ffe7f0);
+}
+
+.app-shell.theme-pink .memory-card:nth-child(4n + 2) {
+  background: linear-gradient(145deg, #ffe6b8, #ffd5dc);
+}
+
+.app-shell.theme-pink .memory-card:nth-child(4n + 3) {
+  background: linear-gradient(145deg, #f8d6f0, #ffe5ed);
+}
+
+.app-shell.theme-pink .challenge-card {
+  background: linear-gradient(150deg, #ffe8f1, #fff0db);
+}
+
+.app-shell.theme-pink .game-panel,
+.app-shell.theme-pink .challenge-card,
+.app-shell.theme-pink .collection-section {
+  border-color: #f4d8e4;
+}
+
+.app-shell.theme-pink .progress-track span,
+.app-shell.theme-pink .restart-button {
+  background: linear-gradient(90deg, #ed78a6, #b45ca8);
+}
+
+.app-shell.theme-pink .collection-card {
+  background: linear-gradient(145deg, #ffedf4, #f8e5fa);
+}
+
+.app-shell.theme-pink .badge-tile,
+.app-shell.theme-pink .win-banner {
+  border-color: #f0cddd;
+  background: linear-gradient(135deg, #ffe1ed, #fff0d5);
+}
+
+@media (max-width: 620px) {
+  .sidebar {
+    position: static;
+    height: auto;
+  }
+
+  .collection-section {
+    padding: 16px;
+  }
+
+  .collection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
